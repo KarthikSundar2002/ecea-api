@@ -1,0 +1,12 @@
+pipeline {
+    stage('Copying Env File'){
+        steps {
+            sh 'cp .env.example .env'
+        }
+    }
+    stage('Start Container'){
+        steps {
+            sh 'docker-compuse up -d'
+        }
+    }
+}
